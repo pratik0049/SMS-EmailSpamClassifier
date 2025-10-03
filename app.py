@@ -17,28 +17,27 @@ vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
 
 
 # EXACT SAME preprocessing function as training
+import nltk
+from nltk.corpus import stopwords
+import string
+from nltk.stem import PorterStemmer
+
+ps = PorterStemmer()  # initialize stemmer
+
 def transform_text(text):
     text = text.lower()
-    text = nltk.word_tokenize(text)
+    words = text.split()  # simple split instead of nltk.word_tokenize
 
-    y = []
-    for i in text:
-        if i.isalnum():  # keep only alphanumeric tokens
-            y.append(i)
+    # Keep only alphanumeric words
+    words = [word for word in words if word.isalnum()]
 
-    text = y.copy()  # copy the list
-    y.clear()
+    # Remove stopwords and punctuation
+    words = [word for word in words if word not in stopwords.words('english') and word not in string.punctuation]
 
-    for i in text:
-        if i not in stopwords.words('english') and i not in string.punctuation:
-            y.append(i)
-    text = y[:]
-    y.clear()
+    # Apply stemming
+    words = [ps.stem(word) for word in words]
 
-    for i in text:
-        y.append(ps.stem(i))
-
-    return " ".join(y)
+    return " ".join(words)
 
 
 # Streamlit UI
