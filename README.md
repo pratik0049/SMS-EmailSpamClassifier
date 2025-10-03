@@ -17,6 +17,16 @@ Welcome to the SMS Spam Classifier! This application leverages Natural Language 
 * **Efficient Preprocessing:** Implements text normalization, tokenization, stopword removal, and stemming.
 
 ---
+## 📸 Examples
+
+**Spam Message Example:**
+
+![Spam Message](images/spam.png)
+
+**Not Spam Message Example:**
+
+![Not Spam Message](images/notspam.png)
+
 
 ## 📊 Model Performance
 
