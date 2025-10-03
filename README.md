@@ -23,7 +23,7 @@ Welcome to the SMS Spam Classifier! This application leverages Natural Language 
 
 ![Spam Message](images/spam.png)
 
-**Not Spam Message Example:**
+** Not Spam Message Example:**
 
 ![Not Spam Message](images/notspam.png)
 
