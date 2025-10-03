@@ -29,8 +29,8 @@ pip install --upgrade \
     pickle-mixin
 
 # 5️⃣ Download NLTK resources
-echo "Downloading NLTK resources..."
-python -m nltk.downloader punkt stopwords wordnet
+mkdir -p ~/.nltk_data
+python -m nltk.downloader punkt stopwords -d ~/.nltk_data
 
 # 6️⃣ Setup complete
 echo "Setup complete! Virtual environment activated."
